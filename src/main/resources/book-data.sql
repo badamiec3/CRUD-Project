@@ -9,4 +9,5 @@ VALUES
 'Hilary Mantel',
 'Historical Fiction',
 'Example desc',
-true);
+true
+);

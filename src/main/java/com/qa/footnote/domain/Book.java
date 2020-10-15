@@ -98,7 +98,7 @@ public class Book {
 		result = prime * result + ((authorName == null) ? 0 : authorName.hashCode());
 		result = prime * result + ((desc == null) ? 0 : desc.hashCode());
 		result = prime * result + ((genre == null) ? 0 : genre.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		// result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + (nowRead ? 1231 : 1237);
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
@@ -128,11 +128,11 @@ public class Book {
 				return false;
 		} else if (!genre.equals(other.genre))
 			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
+		// if (id == null) {
+		// if (other.id != null)
+		// return false;
+		// } else if (!id.equals(other.id))
+		// return false;
 		if (nowRead != other.nowRead)
 			return false;
 		if (title == null) {
