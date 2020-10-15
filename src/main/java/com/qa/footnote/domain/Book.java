@@ -22,23 +22,26 @@ public class Book {
 
 	private boolean nowRead;
 
+	private String colour;
+
 	public Book() {
 		super();
 	}
 
-	public Book(String title, String authorName, String genre, String desc, boolean nowRead) {
+	public Book(String title, String authorName, String genre, String desc, boolean nowRead, String colour) {
 		super();
 		this.title = title;
 		this.authorName = authorName;
 		this.genre = genre;
 		this.desc = desc;
 		this.nowRead = nowRead;
+		this.colour = colour;
 	}
 
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", title=" + title + ", authorName=" + authorName + ", genre=" + genre + ", desc="
-				+ desc + ", nowRead=" + nowRead + "]";
+				+ desc + ", nowRead=" + nowRead + ", colour=" + colour + "]";
 	}
 
 	// Getters and Setters
@@ -91,14 +94,22 @@ public class Book {
 		this.nowRead = nowRead;
 	}
 
+	public String getColour() {
+		return colour;
+	}
+
+	public void setColour(String colour) {
+		this.colour = colour;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((authorName == null) ? 0 : authorName.hashCode());
+		result = prime * result + ((colour == null) ? 0 : colour.hashCode());
 		result = prime * result + ((desc == null) ? 0 : desc.hashCode());
 		result = prime * result + ((genre == null) ? 0 : genre.hashCode());
-		// result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + (nowRead ? 1231 : 1237);
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
@@ -118,6 +129,11 @@ public class Book {
 				return false;
 		} else if (!authorName.equals(other.authorName))
 			return false;
+		if (colour == null) {
+			if (other.colour != null)
+				return false;
+		} else if (!colour.equals(other.colour))
+			return false;
 		if (desc == null) {
 			if (other.desc != null)
 				return false;
@@ -128,11 +144,6 @@ public class Book {
 				return false;
 		} else if (!genre.equals(other.genre))
 			return false;
-		// if (id == null) {
-		// if (other.id != null)
-		// return false;
-		// } else if (!id.equals(other.id))
-		// return false;
 		if (nowRead != other.nowRead)
 			return false;
 		if (title == null) {

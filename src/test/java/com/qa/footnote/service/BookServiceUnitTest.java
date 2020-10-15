@@ -29,8 +29,9 @@ public class BookServiceUnitTest {
 	void testCreateBook() {
 
 		Long id = 1L;
-		Book newBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false);
-		Book savedBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false);
+		Book newBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false, "red");
+		Book savedBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false,
+				"red");
 		savedBook.setId(id);
 
 		Mockito.when(this.repo.save(newBook)).thenReturn(savedBook);
@@ -43,11 +44,11 @@ public class BookServiceUnitTest {
 	void testUpdateBook() {
 		Long id = 1L;
 		Book newBook = new Book("Building Beehives for Dummies", "Richard Rich", "Thriller", "Another description",
-				false);
-		Book oldBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false);
+				false, "blue");
+		Book oldBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false, "red");
 		oldBook.setId(id);
 		Book updatedBook = new Book("Building Beehives for Dummies", "Richard Rich", "Thriller", "Another description",
-				false);
+				false, "blue");
 		updatedBook.setId(id);
 
 		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(oldBook));
@@ -60,7 +61,8 @@ public class BookServiceUnitTest {
 	@Test
 	void testDeleteBook() {
 		Long id = 1L;
-		Book toRemoveBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false);
+		Book toRemoveBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false,
+				"red");
 		toRemoveBook.setId(1L);
 
 		Mockito.when(this.repo.existsById(id)).thenReturn(false);
@@ -74,7 +76,8 @@ public class BookServiceUnitTest {
 
 		List<Book> books = new ArrayList<Book>();
 		Long id = 1L;
-		Book addedBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false);
+		Book addedBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false,
+				"red");
 		addedBook.setId(id);
 		books.add(addedBook);
 
@@ -86,12 +89,12 @@ public class BookServiceUnitTest {
 
 	@Test
 	void testToString() {
-		Book book = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false);
+		Book book = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false, "red");
 		String testedString = book.toString();
 		assertEquals(testedString,
 				"Book [id=" + book.getId() + ", title=" + book.getTitle() + ", authorName=" + book.getAuthorName()
 						+ ", genre=" + book.getGenre() + ", desc=" + book.getDesc() + ", nowRead=" + book.isNowRead()
-						+ "]");
+						+ ", colour=" + book.getColour() + "]");
 
 	}
 

@@ -39,14 +39,15 @@ public class BookIntegrationTest {
 
 	@Test
 	void testCreateBook() throws Exception {
-		Book newBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false);
+		Book newBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false, "red");
 		String requestBody = this.mapper.writeValueAsString(newBook);
 
 		RequestBuilder request = post("/createBook").contentType(MediaType.APPLICATION_JSON).content(requestBody);
 
 		ResultMatcher checkStatus = status().isCreated();
 
-		Book savedBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false);
+		Book savedBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false,
+				"red");
 		savedBook.setId(2L);
 
 		String resultBody = this.mapper.writeValueAsString(savedBook);
@@ -70,7 +71,7 @@ public class BookIntegrationTest {
 
 	@Test
 	void testReadBook() throws Exception {
-		Book book = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false);
+		Book book = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false, "red");
 		book.setId(1L);
 		List<Book> books = new ArrayList<>();
 		books.add(book);
@@ -83,14 +84,14 @@ public class BookIntegrationTest {
 	@Test
 	void testUpdateBook() throws Exception {
 		Long id = 1L;
-		Book updatedBook = new Book("Title", "Author", "Genre", "Desc", true);
+		Book updatedBook = new Book("Title", "Author", "Genre", "Desc", true, "blue");
 		String requestBody = this.mapper.writeValueAsString(updatedBook);
 		RequestBuilder request = put("/updateBook?id=" + id).contentType(MediaType.APPLICATION_JSON)
 				.content(requestBody);
 
 		ResultMatcher checkStatus = status().isAccepted();
 
-		Book returnedBook = new Book("Title", "Author", "Genre", "Desc", true);
+		Book returnedBook = new Book("Title", "Author", "Genre", "Desc", true, "blue");
 		returnedBook.setId(id);
 
 		String resultBody = this.mapper.writeValueAsString(returnedBook);

@@ -6,5 +6,6 @@ CREATE TABLE book (
     authorName VARCHAR(255),
     genre VARCHAR(255),
     desc VARCHAR(255),
-    nowRead BOOLEAN NOT NULL
+    nowRead BOOLEAN NOT NULL,
+    colour VARCHAR(255)
 );

@@ -36,6 +36,7 @@ public class BookService {
 		oldBook.setGenre(book.getGenre());
 		oldBook.setDesc(book.getDesc());
 		oldBook.setNowRead(book.isNowRead());
+		oldBook.setColour(book.getColour());
 
 		return this.repo.save(oldBook);
 	}

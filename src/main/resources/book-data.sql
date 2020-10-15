@@ -3,11 +3,13 @@ INSERT INTO `book`
 `authorName`,
 `genre`,
 `desc`,
-`nowRead`)
+`nowRead`,
+'colour')
 VALUES
 ('Wolf Hall',
-'Hilary Mantel',
+'Hilary',
 'Historical Fiction',
-'Example desc',
-true
+'Example',
+true,
+'red'
 );
