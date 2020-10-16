@@ -1,15 +1,14 @@
 INSERT INTO `book`
 (`title`,
-`authorName`,
+`author_name`,
 `genre`,
 `desc`,
-`nowRead`,
-'colour')
+`now_read`,
+`colour`)
 VALUES
-('Wolf Hall',
-'Hilary',
-'Historical Fiction',
-'Example',
+('Title',
+'Author',
+'Horror',
+'Description',
 true,
-'red'
-);
+'green');

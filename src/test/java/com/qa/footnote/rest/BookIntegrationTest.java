@@ -39,15 +39,14 @@ public class BookIntegrationTest {
 
 	@Test
 	void testCreateBook() throws Exception {
-		Book newBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false, "red");
+		Book newBook = new Book("Building Beehives for Dummies", "Robert", "Thriller", "Description", false, "red");
 		String requestBody = this.mapper.writeValueAsString(newBook);
 
 		RequestBuilder request = post("/createBook").contentType(MediaType.APPLICATION_JSON).content(requestBody);
 
 		ResultMatcher checkStatus = status().isCreated();
 
-		Book savedBook = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false,
-				"red");
+		Book savedBook = new Book("Building Beehives for Dummies", "Robert", "Thriller", "Description", false, "red");
 		savedBook.setId(2L);
 
 		String resultBody = this.mapper.writeValueAsString(savedBook);
@@ -71,7 +70,7 @@ public class BookIntegrationTest {
 
 	@Test
 	void testReadBook() throws Exception {
-		Book book = new Book("Building Beehives for Dummies", "Robert Bob", "Thriller", "Description", false, "red");
+		Book book = new Book("Title", "Author", "Horror", "Description", true, "green");
 		book.setId(1L);
 		List<Book> books = new ArrayList<>();
 		books.add(book);
