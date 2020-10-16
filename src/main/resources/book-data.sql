@@ -2,7 +2,7 @@ INSERT INTO `book`
 (`title`,
 `author_name`,
 `genre`,
-`desc`,
+`descrip`,
 `now_read`,
 `colour`)
 VALUES

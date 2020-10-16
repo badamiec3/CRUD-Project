@@ -12,11 +12,13 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ActiveProfiles;
 
 import com.qa.footnote.domain.Book;
 import com.qa.footnote.repos.BookRepo;
 
 @SpringBootTest
+@ActiveProfiles(profiles = "test")
 public class BookServiceUnitTest {
 
 	@Autowired
@@ -93,7 +95,7 @@ public class BookServiceUnitTest {
 		String testedString = book.toString();
 		assertEquals(testedString,
 				"Book [id=" + book.getId() + ", title=" + book.getTitle() + ", authorName=" + book.getAuthorName()
-						+ ", genre=" + book.getGenre() + ", desc=" + book.getDesc() + ", nowRead=" + book.isNowRead()
+						+ ", genre=" + book.getGenre() + ", descrip=" + book.getDesc() + ", nowRead=" + book.isNowRead()
 						+ ", colour=" + book.getColour() + "]");
 
 	}
