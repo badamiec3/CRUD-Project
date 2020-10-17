@@ -95,7 +95,7 @@ public class BookServiceUnitTest {
 		String testedString = book.toString();
 		assertEquals(testedString,
 				"Book [id=" + book.getId() + ", title=" + book.getTitle() + ", authorName=" + book.getAuthorName()
-						+ ", genre=" + book.getGenre() + ", descrip=" + book.getDesc() + ", nowRead=" + book.isNowRead()
+						+ ", genre=" + book.getGenre() + ", desc=" + book.getDesc() + ", nowRead=" + book.isNowRead()
 						+ ", colour=" + book.getColour() + "]");
 
 	}

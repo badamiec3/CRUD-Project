@@ -65,9 +65,6 @@ public class BookIntegrationTest {
 
 		this.mockMVC.perform(request1).andExpect(checkStatus1);
 
-		// MvcResult result1 =
-		// this.mockMVC.perform(request1).andExpect(checkStatus1).andReturn();
-
 	}
 
 	@Test

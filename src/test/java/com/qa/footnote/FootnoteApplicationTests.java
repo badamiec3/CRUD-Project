@@ -17,7 +17,7 @@ class FootnoteApplicationTests {
 	}
 
 	@Test
-	void giveCoveragePlz() {
+	void coverageEquals() {
 		EqualsVerifier.forClass(Book.class).usingGetClass().verify();
 	}
 

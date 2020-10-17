@@ -18,7 +18,7 @@ public class Book {
 
 	private String genre;
 
-	private String descrip;
+	private String desc;
 
 	private boolean nowRead;
 
@@ -28,20 +28,20 @@ public class Book {
 		super();
 	}
 
-	public Book(String title, String authorName, String genre, String descrip, boolean nowRead, String colour) {
+	public Book(String title, String authorName, String genre, String desc, boolean nowRead, String colour) {
 		super();
 		this.title = title;
 		this.authorName = authorName;
 		this.genre = genre;
-		this.descrip = descrip;
+		this.desc = desc;
 		this.nowRead = nowRead;
 		this.colour = colour;
 	}
 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", title=" + title + ", authorName=" + authorName + ", genre=" + genre + ", descrip="
-				+ descrip + ", nowRead=" + nowRead + ", colour=" + colour + "]";
+		return "Book [id=" + id + ", title=" + title + ", authorName=" + authorName + ", genre=" + genre + ", desc="
+				+ desc + ", nowRead=" + nowRead + ", colour=" + colour + "]";
 	}
 
 	// Getters and Setters
@@ -79,11 +79,11 @@ public class Book {
 	}
 
 	public String getDesc() {
-		return descrip;
+		return desc;
 	}
 
-	public void setDesc(String descrip) {
-		this.descrip = descrip;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 
 	public boolean isNowRead() {
@@ -108,7 +108,7 @@ public class Book {
 		int result = 1;
 		result = prime * result + ((authorName == null) ? 0 : authorName.hashCode());
 		result = prime * result + ((colour == null) ? 0 : colour.hashCode());
-		result = prime * result + ((descrip == null) ? 0 : descrip.hashCode());
+		result = prime * result + ((desc == null) ? 0 : desc.hashCode());
 		result = prime * result + ((genre == null) ? 0 : genre.hashCode());
 		result = prime * result + (nowRead ? 1231 : 1237);
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
@@ -134,10 +134,10 @@ public class Book {
 				return false;
 		} else if (!colour.equals(other.colour))
 			return false;
-		if (descrip == null) {
-			if (other.descrip != null)
+		if (desc == null) {
+			if (other.desc != null)
 				return false;
-		} else if (!descrip.equals(other.descrip))
+		} else if (!desc.equals(other.desc))
 			return false;
 		if (genre == null) {
 			if (other.genre != null)
